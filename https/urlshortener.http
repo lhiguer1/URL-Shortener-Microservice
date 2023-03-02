@@ -1,0 +1,39 @@
+@baseUrl = http://localhost:3000/api/shorturl
+
+### Get shortened url via post request
+POST {{baseUrl}} HTTP/1.1
+Content-Type: application/json
+
+{
+    "url": "https://www.wikipedia.org"
+}
+
+### Get shortened url via post request
+POST {{baseUrl}} HTTP/1.1
+Content-Type: application/json
+
+{
+    "not_url": "https://www.wikipedia.org"
+}
+
+### Get shortened url via post request
+POST {{baseUrl}} HTTP/1.1
+Content-Type: application/json
+
+{
+    "url": "blahblah://www.wikipedia.org"
+}
+
+### bad request
+POST {{baseUrl}}/blahblah HTTP/1.1
+Content-Type: application/json
+
+{
+    "url": "https://www.wikipedia.org"
+}
+
+### 
+GET {{baseUrl}}/blahblah HTTP/1.1
+
+###
+GET {{baseUrl}}/0 HTTP/1.1
